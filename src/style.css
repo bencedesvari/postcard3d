@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css?family=Indie+Flower");
+@import url("https://fonts.googleapis.com/css?family=Mountains+of+Christmas");
+
+html, body, .trap {
+  height: 100%;
+  font-family: "Mountains of Christmas", cursive;
+  margin: 0px;
+  padding: 0px;
+  
+}
+h3 {
+  font-family: "Mountains of Christmas", cursive;
+ 
+  color:#fff;
+  font-size:1.5em;
+} 
+
+.postcardcontainer{
+  margin:1%;
+  height:30%;
+}
+
+
+body {
+  margin: 1%;
+  background-image:
+    linear-gradient(
+        #f5624d, #cc231e
+    );
+}
+
+h2 {
+  
+    font-size: 4em;
+    color: white;
+    text-align: center;
+    letter-spacing: 0.12em;
+    text-shadow: 0 0 8px rgba(255, 65, 185, 1);
+  
+}
+h2:hover{
+  color:rgba(255, 65, 185, 1);
+
+  text-shadow: 0 0 8px #fff;
+
+}
+
+.trap {
+  
+  background:#f5624d;
+  float: left;
+ text-align:center;
+  width: 10%;
+}
+.trap:nth-child(1):hover ~ .book .page:nth-child(1) {
+  -webkit-transform: rotateY(-45deg);
+  -moz-transform: rotateY(-45deg);
+  -o-transform: rotateY(-45deg);
+  -ms-transform: rotateY(-45deg);
+
+  transform: rotateY(-45deg);
+  
+}
+.trap:nth-child(1):hover ~ .book .page:nth-child(2) {
+  -webkit-transform: rotateY(-38.5714285714deg);
+  -moz-transform: rotateY(-38.5714285714deg);
+  -o-transform: rotateY(-38.5714285714deg);
+ -ms-transform: rotateY(-38.5714285714deg);
+
+  transform: rotateY(-38.5714285714deg);
+}
+.trap:nth-child(2):hover ~ .book .page:nth-child(1) {
+  -webkit-transform: rotateY(-141.4285714286deg);
+  -moz-transform: rotateY(-141.4285714286deg);
+  -o-transform: rotateY(-141.4285714286deg);
+  -ms-transform: rotateY(-141.4285714286deg);
+
+  transform: rotateY(-141.4285714286deg);
+}
+.trap:nth-child(2):hover ~ .book .page:nth-child(2) {
+  -webkit-transform: rotateY(-45deg);
+  -moz-transform: rotateY(-45deg);
+  -o-transform: rotateY(-45deg);
+  -ms-transform: rotateY(-45deg);
+  transform: rotateY(-45deg);
+}
+.trap:nth-child(2):hover ~ .book .page:nth-child(3) {
+  -webkit-transform: rotateY(-38.5714285714deg);
+  -moz-transform: rotateY(-38.5714285714deg);
+  -o-transform: rotateY(-38.5714285714deg);
+  -ms-transform: rotateY(-38.5714285714deg);
+  transform: rotateY(-38.5714285714deg);
+}
+
+.book, .book *, .book :before, .book :after {
+  box-sizing: border-box;
+  position: absolute;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+}
+
+.book {
+  z-index: -1;
+  top: 40%;
+  left: 50%;
+  pointer-events: none;
+  -webkit-transform: translate(-50%, -50%) perspective(3000px) rotate(25deg) ;
+  -moz-transform: translate(-50%, -50%) perspective(3000px) rotate(25deg) ;
+  -o-transform: translate(-50%, -50%) perspective(3000px) rotate(25deg) ;
+  -ms-transform: translate(-50%, -50%) perspective(3000px) rotate(25deg) ;
+
+  transform: translate(-50%, -50%) perspective(3000px) rotate(25deg) ;
+
+}
+
+
+
+.page {
+  top: 50%;
+  left: 60%;
+  margin: -7.5em 0;
+  width: 300px;
+  height: 450px;
+  transform-origin: 0 50%;
+-webkit-transition: .5s;
+-moz-transition: .5s;
+-o-transition: .5s;
+-ms-transition: .5s; 
+transition: .5s;
+}
+.page:before, .page:after {
+  width: inherit;
+  height: inherit;
+  border-radius: 0 .5em .5em 0;
+  backface-visibility: hidden;
+  background-position: 100% 100%;
+  background-size: 100% 100%;
+  content: '';
+}
+.page:after {
+  border-radius: .5em 0 0 .5em;
+  transform: rotateY(180deg);
+  background-position: 0 0;
+}
+.page:nth-child(1) {
+  z-index: 0;
+}
+.page:nth-child(1):before {
+  background-image: url("http://www.akkol.eu/surprise/images/eleje.jpg")
+}
+.page:nth-child(1):after {
+  background-image: url("http://www.akkol.eu/surprise/images/belseje_bal.jpg");
+}
+.page:nth-child(2) {
+  z-index: -1;
+}
+.page:nth-child(2):before {
+  background-image: url("http://www.akkol.eu/surprise/images/belseje_jobb.jpg");
+}
+
+

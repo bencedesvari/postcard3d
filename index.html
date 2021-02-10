@@ -1,0 +1,145 @@
+<html>
+    <head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>bzdesvari - 3D Postcard 2</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="src/storystyle.css">
+	</head>
+    <body>
+		<ul id="fairy-lights">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		  </ul>
+		  <canvas id="sky">Your browser doesn't support HTML5 canvas.</canvas>
+		  <div id="content">
+			<h1>The Story Behind This</h1>
+			<div class="container-fluid" style="background-color:#fff; border:2px solid black; align-items:center">
+			  <p>Dear Csabesz, Ching and Chabes</p>
+			  <p>I made this website and little project because of what happened today.</p>
+
+			  <p>Sadly, we don't have post office delivery to the Philippines right now</p>
+				<center><img src="images/story.jpg" style="height:300px;" > 
+			  
+			  <p>So I figured out how to show you! :), click on the link below:</p>
+				<a href="./thestory.html">TO: MERRY CHRISTMAS & HAPPY NEW YEAR!</a>
+				<p>Lots of love,<br>Timi és Bence</p></center>
+				
+
+			  
+			  
+			</div>
+		  </div>
+
+<script>window.onload = function () {
+	// get the canvas and context and store in var's
+	var canvas = document.getElementById("sky");
+	var context = canvas.getContext("2d");
+  
+	// set canvas dimensions to window height and width
+	var windowWidth = window.innerWidth;
+	var windowHeight = window.innerHeight;
+	canvas.width = windowWidth;
+	canvas.height = windowHeight;
+  
+	// generate snowflakes and apply attributes to them
+	var maxFlakes = 100;
+	var flakes = []; // array for all the snowflakes
+  
+	// loop through the empty flakes and apply attributes
+	for (var i = 0; i < maxFlakes; i++) {
+	  flakes.push({
+		x: Math.random() * windowWidth,
+		y: Math.random() * windowHeight,
+		r: Math.random() * 5 + 2, // radius of the flake (min: 2px, max: 7px)
+		d: Math.random() + 1 // density of the flake
+	  });
+	}
+  
+	// draw flakes onto canvas
+	function drawFlakes() {
+	  context.clearRect(0, 0, windowWidth, windowHeight);
+	  context.fillStyle = "white";
+	  context.beginPath();
+	  for (var i = 0; i < maxFlakes; i++) {
+		var flake = flakes[i];
+		context.moveTo(flake.x, flake.y);
+		context.arc(flake.x, flake.y, flake.r, 0, Math.PI * 2, true);
+	  }
+	  context.fill();
+	  moveFlakes();
+	}
+  
+	// animate the flakes
+	var angle = 0;
+  
+	function moveFlakes() {
+	  angle += 0.01;
+	  for (var i = 0; i < maxFlakes; i++) {
+		var flake = flakes[i];
+  
+		// update X and Y coordinates of each snowflake
+		flake.y += Math.pow(flake.d, 2) + 1;
+		flake.x += Math.sin(angle) * 2;
+  
+		// if the snowflake reaches the bottom, send a new one to the top
+		if (flake.y > windowHeight) {
+		  flakes[i] = {
+			x: Math.random() * windowWidth,
+			y: 0,
+			r: flake.r,
+			d: flake.d
+		  };
+		}
+	  }
+	}
+  
+	setInterval(drawFlakes, 25); // call function "drawFlakes" every 25 milliseconds
+  };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+   </body>
+</html>

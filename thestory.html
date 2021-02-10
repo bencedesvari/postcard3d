@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <title>bzdesvari - 3D Postcard 2</title>
+        <link rel="stylesheet" type="text/css" href="src/style.css">
+		<script src="src/script.js"></script>
+	</head>
+    <body>
+		<h2>Merry Christmas&Happy New Year!</h2><h3>Swipe below for the magic. :)</h3>
+			<div class="postcardcontainer">
+			        <div class='trap'></div>
+					<div class='trap'></div>
+						<!--	<div class='trap'></div>
+							<div class='trap'></div>
+							<div class='trap'></div>
+							<div class='trap'></div>
+							<div class='trap'></div>
+							<div class='trap'></div>-->
+					<div class='book'>
+						<div class='page'></div>
+						<div class='page'></div>
+  					</div>
+			</div>
+
+<script>
+window.onload = function () {
+	// get the canvas and context and store in var's
+	var canvas = document.getElementById("sky");
+	var context = canvas.getContext("2d");
+  
+	// set canvas dimensions to window height and width
+	var windowWidth = window.innerWidth;
+	var windowHeight = window.innerHeight;
+	canvas.width = windowWidth;
+	canvas.height = windowHeight;
+  
+	// generate snowflakes and apply attributes to them
+	var maxFlakes = 100;
+	var flakes = []; // array for all the snowflakes
+  
+	// loop through the empty flakes and apply attributes
+	for (var i = 0; i < maxFlakes; i++) {
+	  flakes.push({
+		x: Math.random() * windowWidth,
+		y: Math.random() * windowHeight,
+		r: Math.random() * 5 + 2, // radius of the flake (min: 2px, max: 7px)
+		d: Math.random() + 1 // density of the flake
+	  });
+	}
+  
+	// draw flakes onto canvas
+	function drawFlakes() {
+	  context.clearRect(0, 0, windowWidth, windowHeight);
+	  context.fillStyle = "white";
+	  context.beginPath();
+	  for (var i = 0; i < maxFlakes; i++) {
+		var flake = flakes[i];
+		context.moveTo(flake.x, flake.y);
+		context.arc(flake.x, flake.y, flake.r, 0, Math.PI * 2, true);
+	  }
+	  context.fill();
+	  moveFlakes();
+	}
+  
+	// animate the flakes
+	var angle = 0;
+  
+	function moveFlakes() {
+	  angle += 0.01;
+	  for (var i = 0; i < maxFlakes; i++) {
+		var flake = flakes[i];
+  
+		// update X and Y coordinates of each snowflake
+		flake.y += Math.pow(flake.d, 2) + 1;
+		flake.x += Math.sin(angle) * 2;
+  
+		// if the snowflake reaches the bottom, send a new one to the top
+		if (flake.y > windowHeight) {
+		  flakes[i] = {
+			x: Math.random() * windowWidth,
+			y: 0,
+			r: flake.r,
+			d: flake.d
+		  };
+		}
+	  }
+	}
+  
+	setInterval(drawFlakes, 25); // call function "drawFlakes" every 25 milliseconds
+  };
+  </script>
+   </body>
+</html>

@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css?family=Mountains+of+Christmas");
+
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: "Mountains of Christmas", cursive;
+  background-image:
+    linear-gradient(
+        #f5624d, #cc231e
+    );
+  font-size: 16px; /* base for em */
+  width: 100%;
+  overflow: hidden;
+}
+p {
+  font-family: serif;
+}
+a {
+  text-decoration: none;
+}
+ul#fairy-lights {
+  text-align: center;
+  white-space: nowrap;
+  position: absolute;
+  padding: 0;
+  width: 100%;
+  top: -80px;
+  border-bottom: 3px solid #222;
+  height: 100px;
+}
+
+ul#fairy-lights li {
+  position: relative;
+  list-style: none;
+  margin: 0 15px;
+  padding: 0;
+  display: inline-block;
+  width: 15px;
+  height: 30px;
+  border-radius: 50%;
+  top: 102px;
+  background: #fff;
+}
+ul#fairy-lights li:nth-child(4n + 1) {
+  background: rgba(255, 230, 65, 1);
+  box-shadow: 0 2px 20px 4px rgba(255, 230, 65, 1);
+}
+ul#fairy-lights li:nth-child(4n + 2) {
+  background: rgba(255, 65, 185, 1);
+  box-shadow: 0 2px 20px 4px rgba(255, 65, 185, 1);
+}
+ul#fairy-lights li:nth-child(4n + 3) {
+  background: rgba(0, 120, 255, 1);
+  box-shadow: 0 2px 20px 4px rgba(0, 120, 255, 1);
+}
+ul#fairy-lights li:nth-child(4n + 4) {
+  background: rgba(65, 230, 65, 1);
+  box-shadow: 0 2px 20px 4px rgba(65, 230, 65, 1);
+}
+
+div#content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* brings it ultimately to the middle */
+  width: auto;
+}
+h1 {
+  font-size: 4em;
+  color: white;
+  text-align: center;
+  letter-spacing: 0.12em;
+  text-shadow: 0 0 8px rgba(255, 65, 185, 1);
+}
+p {
+    font-size: 1.5em;
+    color: red;
+    text-align: center;
+    font-family: "Mountains of Christmas", cursive;
+    text-shadow: 0 0 8px white;
+}
+div#content-box {
+    
+    float:center;
+    text-align:center;
+  border-radius: 10px solid black;
+  background-color: #ffffff;
+  width: 100%;
+  padding: 1%;
+  margin: 0;
+}
+
+/* media queries here */
+@media (max-width: 1200px) and (min-width: 601px) {
+  div#content {
+    left: 10%;
+    width: 80%;
+    transform: translate(0, -50%);
+  }
+  div#content-box {
+    width: 50%;
+  }
+}
+
+@media (max-width: 600px) and (min-width: 420px) {
+  h1 {
+    font-size: 3em;
+  }
+  div#content {
+    width: 80%;
+    height: 60%;
+  }
+  div#content-box {
+    width: 80%;
+  }
+}
+@media (max-width: 419px) {
+  h1 {
+    font-size: 2em;
+  }
+  p {
+    font-size: 16px;
+  }
+  div#content {
+    width: 90%;
+    left: 5%;
+    transform: translate(0, -50%);
+  }
+  div#content-box {
+    width: 70%;
+  }
+}
