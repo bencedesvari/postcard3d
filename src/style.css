@@ -149,16 +149,16 @@ transition: .5s;
   z-index: 0;
 }
 .page:nth-child(1):before {
-  background-image: url("./images/eleje.jpg")
+  background-image: url("images/eleje.jpg")
 }
 .page:nth-child(1):after {
-  background-image: url("./images/belseje_bal.jpg");
+  background-image: url("images/belseje_bal.jpg");
 }
 .page:nth-child(2) {
   z-index: -1;
 }
 .page:nth-child(2):before {
-  background-image: url("./images/belseje_jobb.jpg");
+  background-image: url("images/belseje_jobb.jpg");
 }
 
 
